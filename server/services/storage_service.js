@@ -15,6 +15,13 @@ class StorageService {
 
   createPlayer = async player => {
     //TODO 2: Use Player sequelize model to create a player
+    await Player.create({
+      "player_id": player.player_id,
+      "player_name": player.player_name,
+      "age": player.age,
+      "position": player.position,
+      "country": player.country
+    });
   };
 
   createSalary = async salary => {
