@@ -5,8 +5,12 @@ class StorageService {
   getPlayers = () => Player.findAll();
 
   getPlayer = async (player_id) => {
-    return "TODO";
     //TODO 1: Use Player sequelize model to retrieve the specific player
+    return Player.findAll({
+      where: {
+        player_id: player_id
+      }
+    });
   };
 
   createPlayer = async player => {
