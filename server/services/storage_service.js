@@ -36,14 +36,13 @@ class StorageService {
 
   getSalary = async (salary_id) => {
     //TODO 5: Use Salary sequelize model to get salary
-    return await Salary.findAll({
-      where: {
-        id: salary_id
-      }
-    });
+    return await Salary.findByPk(salary_id, { include: Player})
+    // findAll({
+    //   where: {
+    //     id: salary_id
+    //   }
+    // });
   };
-
-
 }
 
 module.exports = new StorageService();
